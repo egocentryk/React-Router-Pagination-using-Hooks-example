@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import People from './components/People';
-import Pagination from './components/Pagination';
-
-import './App.css';
+import People from '../components/People';
+import Pagination from '../components/Pagination';
 
 function Senators() {
 
@@ -11,10 +9,10 @@ function Senators() {
 		fetchSenators();
 	}, []);
 
-	const [senators, setSenators] 			= useState([]);
-	const [loading, setLoading] 			= useState(false);
-	const [currentPage, setCurrentPage] 	= useState(1);
-	const [postsPerPage] 					= useState(10);
+	const [senators, setSenators] = useState([]);
+	const [loading, setLoading] = useState(false);
+	const [currentPage, setCurrentPage] = useState(1);
+	const [postsPerPage] = useState(10);
 
 	const fetchSenators = async () => {
 		setLoading(true);
@@ -25,13 +23,13 @@ function Senators() {
 
 		const senators = await data.json();
 		setSenators(senators.objects);
-		
+
 		setLoading(false);
 	}
 
-	const indexOfLastPost 	= currentPage * postsPerPage;
-	const indexOfFirstPost 	= indexOfLastPost - postsPerPage;
-	const currentPosts 		= senators.slice(indexOfFirstPost, indexOfLastPost);
+	const indexOfLastPost = currentPage * postsPerPage;
+	const indexOfFirstPost = indexOfLastPost - postsPerPage;
+	const currentPosts = senators.slice(indexOfFirstPost, indexOfLastPost);
 
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
 

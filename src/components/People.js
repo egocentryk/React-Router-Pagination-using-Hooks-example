@@ -1,5 +1,5 @@
 import React from 'react';
-import loader from '../loading.gif';
+import loader from '../images/loading.gif';
 import { Link } from 'react-router-dom';
 
 const People = ({ senators, loading }) => {

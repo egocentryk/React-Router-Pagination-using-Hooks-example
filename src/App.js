@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
-import About from './About';
-import Senators from './Senators';
-import Senator from './Senator';
+import About from './components/About';
+import Senators from './components/Senators';
+import Senator from './components/Senator';
 import Nav from './components/Nav';
 
 function App() {
